@@ -38,7 +38,7 @@ $ pnpm install
 $ pnpm run start
 
 # watch mode
-$ pnpm run start:dev
+$ dotenvx run -e .env -- pnpm run start:dev
 
 # production mode
 $ pnpm run start:prod
