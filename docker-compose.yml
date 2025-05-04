@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  auth-template-db:
+    image: postgres:16
+    ports:
+      - 5436:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: authtemplate
+      POSTGRES_DB: public
+    volumes:
+      - /tmp/data/pg-auth-template:/var/lib/postgresql/data
+    networks:
+      - dev-auth-template
+
+networks:
+  dev-auth-template:
