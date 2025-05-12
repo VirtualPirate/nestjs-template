@@ -46,7 +46,7 @@ $ pnpm run start:prod
 
 ## Run tests
 
-```bash
+````bash
 # unit tests
 $ pnpm run test
 
@@ -55,20 +55,20 @@ $ pnpm run test:e2e
 
 # test coverage
 $ pnpm run test:cov
-```
 
-## Deployment
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
+## database migrations
 ```bash
-$ pnpm install -g @nestjs/mau
-$ mau deploy
-```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+# Create database migration
+$ npx typeorm-ts-node-esm migration:create ./src/databases/pg-typeorm/migrations/<migration_name>
+
+# Run database migrations
+$ dotenvx run -e .env -- pnpm run db:migrate
+
+# Revert database migration
+$ dotenvx run -e .env -- pnpm run db:revert
+````
 
 ## Resources
 
