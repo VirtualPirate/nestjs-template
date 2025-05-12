@@ -12,7 +12,7 @@ services:
     volumes:
       - /tmp/data/pg-template:/var/lib/postgresql/data
     networks:
-      - dev-auth-template
+      - dev-template
 
 networks:
   dev-template:
